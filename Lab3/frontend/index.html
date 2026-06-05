@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Monitor — Auth</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/auth.css">
+</head>
+<body>
+    <main class="auth-page">
+        <div class="container auth-layout">
+            <section class="auth-hero">
+                <div class="auth-logo">⚡</div>
+
+                <h1 class="auth-title" data-i18n="appName">Energy Monitor</h1>
+                <p class="auth-subtitle" data-i18n="appSubtitle">
+                    Контроль споживання електроенергії
+                </p>
+
+                <div class="auth-features">
+                    <div class="auth-feature">
+                        <strong data-i18n="featureTariffsTitle">Тарифи</strong>
+                        <span data-i18n="featureTariffsText">Активна ціна за кВт·год для розрахунків.</span>
+                    </div>
+
+                    <div class="auth-feature">
+                        <strong data-i18n="featureAppliancesTitle">Прилади</strong>
+                        <span data-i18n="featureAppliancesText">Облік пристроїв та їх орієнтовної потужності.</span>
+                    </div>
+
+                    <div class="auth-feature">
+                        <strong data-i18n="featureLimitsTitle">Ліміти</strong>
+                        <span data-i18n="featureLimitsText">Пороги, попередження та контроль перевищень.</span>
+                    </div>
+
+                    <div class="auth-feature">
+                        <strong data-i18n="featureReportsTitle">Звіти</strong>
+                        <span data-i18n="featureReportsText">Аналітика за днями, приладами та періодами.</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card auth-card">
+                <div class="auth-card-header">
+                    <div>
+                        <h2 class="auth-card-title" id="authTitle" data-i18n="loginTitle">Вхід у систему</h2>
+                    </div>
+
+                    <div class="form-group language-switcher">
+                        <label class="form-label" for="languageSelect" data-i18n="language">Мова</label>
+                        <select class="form-select" id="languageSelect">
+                            <option value="uk" data-i18n="uk">Українська</option>
+                            <option value="en" data-i18n="en">English</option>
+                        </select>
+                    </div>
+                </div>
+
+                <form class="auth-form" id="authForm" novalidate>
+                    <div class="form-group">
+                        <label class="form-label" for="emailInput" data-i18n="email">Email</label>
+                        <input class="form-input" id="emailInput" type="email" autocomplete="email">
+                        <div class="form-error" id="emailError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="passwordInput" data-i18n="password">Пароль</label>
+                        <input class="form-input" id="passwordInput" type="password" autocomplete="current-password">
+                        <div class="form-error" id="passwordError"></div>
+                    </div>
+
+                    <button class="btn btn-primary auth-submit" id="submitBtn" type="submit" data-i18n="login">
+                        Увійти
+                    </button>
+
+                    <button class="auth-toggle" id="toggleModeBtn" type="button" data-i18n="noAccount">
+                        Немає акаунта? Зареєструватися
+                    </button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <div class="toast" id="toast"></div>
+
+    <script type="module" src="./js/pages/auth.js"></script>
+</body>
+</html>

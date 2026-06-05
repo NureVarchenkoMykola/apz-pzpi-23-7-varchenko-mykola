@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Monitor — Admin</title>
+
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="admin-sidebar">
+            <div class="sidebar-logo">
+                <div class="sidebar-icon">⚡</div>
+                <div>
+                    <h1 data-i18n="appName">Energy Monitor</h1>
+                    <p data-i18n="adminPanel">Панель адміністратора</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" data-section="overview" data-i18n="adminOverview">Огляд</button>
+                <button class="nav-btn" data-section="users" data-i18n="adminUsers">Користувачі</button>
+                <button class="nav-btn" data-section="audit" data-i18n="adminAudit">Журнал аудиту</button>
+                <button class="nav-btn" data-section="data" data-i18n="adminData">Дані системи</button>
+            </nav>
+
+            <button class="btn btn-outline logout-btn" id="logoutBtn" data-i18n="logout">
+                Вийти
+            </button>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-topbar">
+                <div>
+                    <p class="eyebrow" data-i18n="adminPanel">Панель адміністратора</p>
+                    <h2 id="pageTitle">Огляд</h2>
+                </div>
+
+                <div class="topbar-actions">
+                    <select class="form-select language-select" id="languageSelect">
+                        <option value="uk" data-i18n="uk">Українська</option>
+                        <option value="en" data-i18n="en">English</option>
+                    </select>
+
+                    <button class="btn btn-secondary" id="refreshBtn" data-i18n="refresh">Оновити</button>
+                </div>
+            </header>
+
+            <section class="content-section active" id="overviewSection">
+                <div class="admin-hero">
+                    <div>
+                        <p class="eyebrow" data-i18n="adminDashboard">Адміністрування системи</p>
+                        <h3 data-i18n="adminOverview">Огляд</h3>
+                        <p data-i18n="adminDescription">
+                            Керування користувачами, аудитом та адміністративними даними системи.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="adminStatsRoot"></div>
+            </section>
+
+            <section class="content-section" id="usersSection">
+                <div id="adminUsersRoot"></div>
+            </section>
+
+            <section class="content-section" id="auditSection">
+                <div id="adminAuditRoot"></div>
+            </section>
+
+            <section class="content-section" id="dataSection">
+                <div id="adminDataRoot"></div>
+            </section>
+        </main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script type="module" src="./js/pages/admin.js"></script>
+</body>
+</html>

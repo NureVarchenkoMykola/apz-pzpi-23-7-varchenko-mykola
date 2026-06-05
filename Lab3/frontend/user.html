@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Monitor — User</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/user.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <div class="sidebar-icon">⚡</div>
+                <div>
+                    <h1 data-i18n="appName">Energy Monitor</h1>
+                    <p data-i18n="userCabinet">Кабінет користувача</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" data-section="overview" data-i18n="overview">Огляд</button>
+                <button class="nav-btn" data-section="tariffs" data-i18n="tariffs">Тарифи</button>
+                <button class="nav-btn" data-section="appliances" data-i18n="appliances">Прилади</button>
+                <button class="nav-btn" data-section="consumption" data-i18n="consumption">Споживання</button>
+                <button class="nav-btn" data-section="limits" data-i18n="limits">Ліміти</button>
+                <button class="nav-btn" data-section="reports" data-i18n="reports">Звіти</button>
+            </nav>
+
+            <button class="btn btn-outline logout-btn" id="logoutBtn" data-i18n="logout">
+                Вийти
+            </button>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow" data-i18n="personalCabinet">Особистий кабінет</p>
+                    <h2 id="pageTitle">Огляд</h2>
+                </div>
+
+                <div class="topbar-actions">
+                    <select class="form-select language-select" id="languageSelect">
+                        <option value="uk" data-i18n="uk">Українська</option>
+                        <option value="en" data-i18n="en">English</option>
+                    </select>
+
+                    <button class="btn btn-secondary" id="refreshBtn" data-i18n="refresh">Оновити</button>
+                </div>
+            </header>
+
+            <section class="content-section active" id="overviewSection">
+                <div class="hero-card">
+                    <div>
+                        <p class="eyebrow" data-i18n="currentMonth">Поточний місяць</p>
+                        <h3 data-i18n="overviewTitle">Огляд енергоспоживання</h3>
+                        <p data-i18n="overviewDescription">
+                            Тут відображається зведення за тарифами, приладами, споживанням і лімітами.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="stats-grid" id="overviewStats">
+                    <article class="stat-card">
+                        <span data-i18n="tariffs">Тарифи</span>
+                        <strong id="statTariffs">—</strong>
+                    </article>
+
+                    <article class="stat-card">
+                        <span data-i18n="appliances">Прилади</span>
+                        <strong id="statAppliances">—</strong>
+                    </article>
+
+                    <article class="stat-card">
+                        <span data-i18n="records">Записи</span>
+                        <strong id="statRecords">—</strong>
+                    </article>
+
+                    <article class="stat-card">
+                        <span data-i18n="limits">Ліміти</span>
+                        <strong id="statLimits">—</strong>
+                    </article>
+                </div>
+
+                <div class="dashboard-grid">
+                    <article class="panel">
+                        <h3 data-i18n="summaryForMonth">Звіт за місяць</h3>
+                        <div id="summaryBox" class="muted-box" data-i18n="loadingData">Дані завантажуються...</div>
+                    </article>
+
+                    <article class="panel">
+                        <h3 data-i18n="alerts">Оповіщення</h3>
+                        <div id="alertsBox" class="muted-box" data-i18n="loadingData">Дані завантажуються...</div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="content-section" id="tariffsSection">
+                <div id="tariffsRoot"></div>
+            </section>
+
+            <section class="content-section" id="appliancesSection">
+                <div id="appliancesRoot"></div>
+            </section>
+
+            <section class="content-section" id="consumptionSection">
+                <div id="consumptionRoot"></div>
+            </section>
+
+            <section class="content-section" id="limitsSection">
+                <div id="limitsRoot"></div>
+            </section>
+
+            <section class="content-section" id="reportsSection">
+                <div id="reportsRoot"></div>
+            </section>
+        </main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script type="module" src="./js/pages/user.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="energyGradient" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#17a673"></stop>
+            <stop offset="1" stop-color="#2563eb"></stop>
+        </linearGradient>
+    </defs>
+
+    <rect width="64" height="64" rx="18" fill="url(#energyGradient)"></rect>
+
+    <path d="M36.5 6L16 36H30L26.5 58L48 27H34L36.5 6Z" fill="#ffffff"></path>
+
+    <path d="M36.5 6L16 36H30L26.5 58L48 27H34L36.5 6Z" fill="#ffffff" opacity="0.92"></path>
+</svg>
